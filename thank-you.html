@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You -- Prompt Playbook | Zeiyre</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a; --bg-card: #111113; --border: #1e1e24;
+      --text: #e4e4e7; --text-muted: #71717a; --accent: #3b82f6;
+      --green: #4ade80; --green-bg: rgba(34,197,94,0.1); --green-border: rgba(34,197,94,0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font);
+      line-height: 1.6; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    }
+    .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; text-align: center; }
+    .badge {
+      display: inline-block; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--green); background: var(--green-bg);
+      border: 1px solid var(--green-border); padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
+    }
+    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .subtitle { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 36px; line-height: 1.7; }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff;
+      font-size: 1.125rem; font-weight: 600; padding: 16px 40px; border-radius: 8px;
+      text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; margin-bottom: 16px;
+    }
+    .download-btn:hover { background: #2563eb; }
+    .note { font-size: 0.875rem; color: var(--text-muted); margin-top: 12px; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px; margin-top: 36px; text-align: left;
+    }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+    .card a { color: var(--accent); text-decoration: none; }
+    .card a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">Payment Confirmed</div>
+    <h1>Thank you for your purchase.</h1>
+    <p class="subtitle">Your copy of The Prompt Playbook is ready. Click below to download.</p>
+    <a href="https://raw.githubusercontent.com/WilliamZero9/prompt-playbook-delivery/main/prompt-playbook.md" download="Prompt-Playbook-by-Zeiyre.md" class="download-btn">
+      Download Prompt Playbook
+    </a>
+    <p class="note">Right-click and "Save As" if the download doesn't start automatically.</p>
+    <div class="card">
+      <h3>Need help?</h3>
+      <p>If you have any issues with the download, email <a href="mailto:zeiyre.agent@gmail.com">zeiyre.agent@gmail.com</a> with your Stripe receipt and we'll send the file directly.</p>
+    </div>
+    <div class="card">
+      <h3>More free tools from Zeiyre</h3>
+      <p>
+        <a href="https://williamzero9.github.io/freelancer-rate-calculator/">Freelancer Rate Calculator</a> --
+        <a href="https://williamzero9.github.io/meta-tag-generator/">Meta Tag Generator</a> --
+        <a href="https://williamzero9.github.io/invoice-generator/">Invoice Generator</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
