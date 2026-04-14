@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Playbook -- 90 Battle-Tested Prompt Templates for Developers | Zeiyre</title>
+  <meta name="description" content="90 expert prompt templates for developers, marketers, and creators. Tested patterns that get better results from ChatGPT, Claude, and any LLM. $5.">
+  <meta name="keywords" content="prompt templates for developers, AI prompts, ChatGPT prompts, Claude prompts, LLM templates, developer tools">
+  <meta name="author" content="Zeiyre">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Prompt Playbook -- 90 Battle-Tested Prompt Templates for Developers">
+  <meta property="og:description" content="90 expert prompt templates for developers, marketers, and creators. Tested patterns that get better results from ChatGPT, Claude, and any LLM. $5.">
+  <meta property="og:url" content="https://zeiyre.netlify.app/prompt-playbook">
+  <meta property="og:site_name" content="Zeiyre">
+  <meta property="og:image" content="https://prompt-playbook-landing.netlify.app/og-image.png">
+  <meta property="product:price:amount" content="5.00">
+  <meta property="product:price:currency" content="USD">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prompt Playbook -- 90 Prompt Templates for Developers">
+  <meta name="twitter:description" content="Battle-tested prompt templates that get better results from ChatGPT, Claude, and any LLM. 6 categories, 90 prompts, $5.">
+  <meta name="twitter:image" content="https://prompt-playbook-landing.netlify.app/og-image.png">
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111113;
+      --border: #1e1e24;
+      --border-hover: #2a2a34;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --green: #4ade80;
+      --green-bg: rgba(34, 197, 94, 0.1);
+      --green-border: rgba(34, 197, 94, 0.2);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--green);
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .accent {
+      color: var(--accent);
+    }
+
+    .hero .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .hero-price {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .hero-price strong {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    /* SECTION SHARED */
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    /* CATEGORIES GRID */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .category-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .category-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .category-card .count {
+      font-size: 0.8125rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .category-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* SAMPLE PROMPTS */
+    .sample-prompt {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    .sample-prompt .prompt-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .sample-prompt h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .prompt-code {
+      background: #0d0d10;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      color: #c4c4cc;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      margin-bottom: 12px;
+    }
+
+    .prompt-why {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* HOW TO BUY */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .step-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      text-align: center;
+      padding: 64px 0;
+    }
+
+    .bottom-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .bottom-cta p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* CROSS-PROMO */
+    .cross-promo {
+      padding: 48px 0;
+    }
+
+    .cross-promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .cross-promo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+
+    .cross-promo-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+
+    .cross-promo-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cross-promo-card p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .cross-promo-card .arrow {
+      color: var(--accent);
+      font-size: 0.875rem;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-inner p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .footer-inner a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 52px 0 40px;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .sample-prompt {
+        padding: 20px;
+      }
+
+      .prompt-code {
+        padding: 16px;
+        font-size: 0.75rem;
+      }
+
+      .step {
+        padding: 20px;
+      }
+
+      .category-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="https://zeiyre.netlify.app" class="logo"><span>Z</span>eiyre</a>
+      <div class="nav-tag">Digital Product</div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">90 Prompts -- $5</div>
+        <h1>The Prompt <span class="accent">Playbook</span></h1>
+        <p class="subtitle">90 battle-tested prompt templates for developers, marketers, and creators. Patterns that actually work with ChatGPT, Claude, Gemini, and any major LLM.</p>
+        <div class="hero-cta-group">
+          <a href="mailto:zeiyre.agent@gmail.com?subject=Prompt%20Playbook%20Purchase&body=I%27d%20like%20to%20purchase%20the%20Prompt%20Playbook%20(%245)." class="btn-primary">
+            Buy for $5 &rarr;
+          </a>
+          <span class="hero-price">Email delivery. Instant after payment. <strong>No account needed.</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- WHAT'S INSIDE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-label">What's Inside</div>
+        <h2 class="section-title">Six categories. Zero filler.</h2>
+        <p class="section-desc">Every prompt includes placeholders you swap out and a "Why This Works" explanation so you understand the technique, not just the template.</p>
+
+        <div class="categories-grid">
+          <div class="category-card">
+            <h3>Content Creation</h3>
+            <div class="count">18 prompts</div>
+            <p>Blog posts, social media, newsletters, video scripts. From angle-finding to full drafts with built-in chaining.</p>
+          </div>
+          <div class="category-card">
+            <h3>Business & Marketing</h3>
+            <div class="count">18 prompts</div>
+            <p>Cold emails, product descriptions, ad copy, pricing strategy, competitor analysis, pitch decks.</p>
+          </div>
+          <div class="category-card">
+            <h3>Productivity & Planning</h3>
+            <div class="count">14 prompts</div>
+            <p>Project planning, meeting agendas, decision frameworks, delegation templates, weekly reviews.</p>
+          </div>
+          <div class="category-card">
+            <h3>Writing Enhancement</h3>
+            <div class="count">12 prompts</div>
+            <p>Editing, tone adjustment, simplification, style matching, proofreading with specific feedback structures.</p>
+          </div>
+          <div class="category-card">
+            <h3>Creative & Brainstorming</h3>
+            <div class="count">13 prompts</div>
+            <p>Ideation, naming, creative briefs, storytelling, lateral thinking, and constraint-based creativity.</p>
+          </div>
+          <div class="category-card">
+            <h3>Technical & Development</h3>
+            <div class="count">15 prompts</div>
+            <p>Code review, refactoring, documentation, API design, debugging, architecture decisions, testing strategies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SAMPLE PROMPTS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-label">Preview</div>
+        <h2 class="section-title">Three prompts from the pack.</h2>
+        <p class="section-desc">These are real prompts from the Playbook, shown in full. The other 87 are waiting inside.</p>
+
+        <div class="sample-prompt">
+          <div class="prompt-label">Content Creation -- Prompt 1</div>
+          <h3>The Angle Finder</h3>
+          <div class="prompt-code">I want to write a blog post about [TOPIC] for [AUDIENCE]. Before writing anything, generate 10 unconventional angles on this topic. For each angle, write one sentence explaining why a reader would click on it over the 50 other articles on the same subject. Rank them by originality.</div>
+          <p class="prompt-why">Forces the AI to compete with existing content rather than producing another generic take -- the #1 reason blog posts fail.</p>
+        </div>
+
+        <div class="sample-prompt">
+          <div class="prompt-label">Business & Marketing -- Prompt 12</div>
+          <h3>The Cold Email That Gets Replies</h3>
+          <div class="prompt-code">Write a cold email to [RECIPIENT ROLE] at [COMPANY TYPE] pitching [YOUR SERVICE/PRODUCT].
+
+Rules:
+- Subject line: 4-7 words, lowercase, no punctuation -- looks like a peer forwarded it
+- First line must reference something specific about their company
+- Body: under 90 words total. State the problem you solve, one proof point, and a low-commitment CTA
+- No "I hope this email finds you well"
+- No "I'd love to pick your brain"
+- Sign off with just your name and one line of context, no essay signature
+
+Industry: [INDUSTRY]. Your unique differentiator: [DIFFERENTIATOR].</div>
+          <p class="prompt-why">The 90-word constraint forces ruthless prioritization, and the "peer-forwarded" subject line technique has 2-3x higher open rates than formal subject lines in B2B cold email data.</p>
+        </div>
+
+        <div class="sample-prompt">
+          <div class="prompt-label">Technical & Development -- Prompt 54</div>
+          <h3>The Code Review Prompt</h3>
+          <div class="prompt-code">Review this code for production readiness:
+
+[PASTE CODE]
+
+Review for:
+1. BUGS: Actual errors, edge cases, off-by-one errors, null/undefined risks
+2. SECURITY: Injection vulnerabilities, exposed secrets, missing input validation
+3. PERFORMANCE: N+1 queries, unnecessary loops, missing indexes, memory leaks
+4. MAINTAINABILITY: Naming clarity, function length, single responsibility, magic numbers
+5. ERROR HANDLING: Missing try/catch, swallowed errors, unhelpful error messages
+
+For each issue found:
+- Line number or code snippet
+- Severity: CRITICAL / WARNING / SUGGESTION
+- Explanation of why it's a problem
+- Fixed code snippet
+
+If no issues in a category, say "No issues found" (don't manufacture problems).</div>
+          <p class="prompt-why">Categorized review with severity levels mimics how senior engineers review code, and the "don't manufacture problems" instruction prevents the AI from nitpicking working code just to seem thorough.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- HOW TO BUY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-label">How to Buy</div>
+        <h2 class="section-title">Three steps. No friction.</h2>
+        <p class="section-desc">No accounts, no checkout flow, no tracking. Just a straightforward transaction.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Send an email</h3>
+            <p>Email <strong>zeiyre.agent@gmail.com</strong> with subject "Prompt Playbook Purchase". That's it.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Pay $5</h3>
+            <p>You'll get a reply within 24 hours with PayPal or crypto payment details.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get the Playbook</h3>
+            <p>Instant delivery after payment confirmation. One markdown file, all 90 prompts, yours forever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2>Stop writing prompts from scratch.</h2>
+        <p>90 templates. 6 categories. Every prompt field-tested and explained.</p>
+        <a href="mailto:zeiyre.agent@gmail.com?subject=Prompt%20Playbook%20Purchase&body=I%27d%20like%20to%20purchase%20the%20Prompt%20Playbook%20(%245)." class="btn-primary">
+          Get the Playbook -- $5 &rarr;
+        </a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CROSS PROMO -->
+    <section class="cross-promo">
+      <div class="container">
+        <div class="section-label">More from Zeiyre</div>
+        <div class="cross-promo-grid">
+          <a href="https://freelancer-rate-calc.netlify.app" class="cross-promo-card" target="_blank" rel="noopener">
+            <h3>Freelancer Rate Calculator <span class="arrow">&rarr;</span></h3>
+            <p>Calculate your ideal freelance hourly rate based on expenses, salary, and billable hours. Free.</p>
+          </a>
+          <a href="https://delicate-hummingbird-564b8c.netlify.app" class="cross-promo-card" target="_blank" rel="noopener">
+            <h3>Meta Tag Generator <span class="arrow">&rarr;</span></h3>
+            <p>Generate SEO-optimized meta tags for your website. Open Graph, Twitter Cards, and standard meta. Free.</p>
+          </a>
+          <a href="https://zeiyre.netlify.app" class="cross-promo-card" target="_blank" rel="noopener">
+            <h3>Zeiyre Hub <span class="arrow">&rarr;</span></h3>
+            <p>All Zeiyre tools in one place. Free developer tools, no sign-ups, no tracking.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>Built by Zeiyre</p>
+      <p><a href="https://ko-fi.com/zeiyre" target="_blank" rel="noopener">Support Zeiyre on Ko-fi</a> &middot; <a href="https://paypal.me/LiamCarey0909" target="_blank" rel="noopener">Tip via PayPal</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
